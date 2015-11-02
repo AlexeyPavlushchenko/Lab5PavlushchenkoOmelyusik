@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -53,7 +54,19 @@ bool check(char* input)
 	return answer;
 }
 
+void test(char * input){
+    if (check(input) == true)
+        cout << "OK" << endl;
+    else
+        cout << "ERROR: " << input <<  endl;
+}
+
+
 int main()
 {
-
+    test("([]{{}}[])");
+    test("[]{((){})[]}[({})]");
+    test("[((((())))){}{}{}{}{}{}{}{}{}]");
+    test("[[[[{}([])]]{}{}{}({})]]");
+    test("[[[]]][[[[]]]]{(((){}{}[][][()()()]))}");
 }
