@@ -51,6 +51,19 @@ bool braces(char stack1[]) {
     return truth;
 }
 
-int main(){
-    cout << braces("({))") << " " << endl;
+void test(char input[], bool answer)
+{
+	if (braces(input) == answer)
+		cout << "OK" << endl;
+	else cout << "Failed" << endl;
+}
+
+int main()
+{
+	test("{}((())){}[]", true);
+	test("{[[]]}(())",true);
+	test("({{[}}}){(})", false);
+	test(")(()){}", false);
+	test("{}{}{}{})", false);
+	system("Pause");
 }

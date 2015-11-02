@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+#include <algorithm>
 
 using namespace std;
 
@@ -53,8 +54,20 @@ char cycleComputing (char * str){
     return formula->head->key;
 }
 
+void test(char * input, int answer)
+{
+	if (cycleComputing(input) == answer)
+		cout << "OK" << endl;
+	else cout << "Failed" << endl;
+}
 
 int main(){
-    cout << cycleComputing("max(min(6, 7), max(9, 2))") << endl;
-    return 0;
+	test("max(min(6, 7), max(9, 2))", 9);
+	test("max(min(6, max(min(8, 12),5), max(9, 2))", 9);
+	test("max(max(6, 7), max(9, 2))", 9);
+	test("max(max(max(max(max(87,65),56),54,),43), 32)", 87);
+	test("max(3,4)", 4);
+	test("10", 10);
+	system("Pause");
+	return 0;
 }
