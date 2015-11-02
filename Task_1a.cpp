@@ -3,12 +3,10 @@
 
 using namespace std;
 
-bool braces() {
-    char stack1[100] = {'\0'}, stack2[100] = {'\0'};
+bool braces(char stack1[]) {
+    char stack2[100] = {'\0'};
     bool truth = true;
     int size = 0;
-    cin >> stack1;
-    cout << stack1 << endl;
     int key = strlen(stack1) - 1;
     while (truth == true && key >= 0) {
         if (stack1[key] == ')') {
@@ -54,5 +52,5 @@ bool braces() {
 }
 
 int main(){
-    
+    cout << braces("({))") << " " << endl;
 }
