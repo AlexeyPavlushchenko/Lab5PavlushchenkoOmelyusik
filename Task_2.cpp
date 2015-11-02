@@ -44,19 +44,17 @@ void calculation(Formula * formula) {
 // Нужная функция, в стеке остается лишь искомое число
 // Тестить эту фунцкию
 
-void cycleComputing (Formula * formula){
+char cycleComputing (char * str){
+    Formula * formula = new Formula;
+    for (int i = 0; i < strlen(str); i++)
+        push(str[i], formula);
     while (isdigit(formula->head->key) == false || formula->head->next != NULL)
-        calculation(formula);    
+        calculation(formula);
+    return formula->head->key;
 }
 
 
 int main(){
-    Formula * formula = new Formula;
-    char fun[100];
-    gets(fun);
-    for (int i = 0; i < strlen(fun); i++) {
-        push(fun[i], formula);
-    }
-    cycleComputing(formula);
-    cout << formula->head->key << endl;
+    cout << cycleComputing("max(min(6, 7), max(9, 2))") << endl;
+    return 0;
 }
