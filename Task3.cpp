@@ -2,6 +2,7 @@
 #include <stack>
 #include <iostream> 
 #include <cstring>
+#include <cstdlib>
 
 using namespace std;
 
@@ -132,7 +133,12 @@ void test(char* input, int res)
 		cout << "Failed" << endl;
 }
 
-void main()
+int main()
 {
 	test("(50/100+30/15)*40", 100);
+        test("(5*14)-(543*32400+1000)/100-1351+325176", 147953);
+        test("9435+1235792/8-100431+32/16", 63480);
+        test("1123+(124+156)/(156-146)+124", 1275);
+        test("921679+934436/(3566-3562)-328922/2*2", 826366);
+        test("3269/(3487-3488)+389497-327561/(3+1-5/5)+12", 277053);
 }
